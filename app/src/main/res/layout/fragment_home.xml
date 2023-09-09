@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable name="homeTitle" type="String" />
+        <variable name="homeFragment" type="com.example.loginsignupapp.ui.HomeFragment" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.HomeFragment">
+
+        <ImageView
+            android:id="@+id/imageViewHome"
+            android:layout_width="0dp"
+            android:layout_height="380dp"
+            android:src="@drawable/bg"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/textViewHomeTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-condensed-light"
+            android:text="@{homeTitle}"
+            android:textColor="#C6B293"
+            android:textSize="60sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageViewHome" />
+
+        <Button
+            android:id="@+id/buttonHomeLogin"
+            android:layout_width="340dp"
+            android:layout_height="60dp"
+            android:layout_marginTop="60dp"
+            android:background="@drawable/button_bg"
+            android:text="Login"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            android:onClick="@{() -> homeFragment.buttonLogin(buttonHomeLogin)}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewHomeTitle" />
+
+        <Button
+            android:id="@+id/buttonHomeSignUp"
+            android:layout_width="340dp"
+            android:layout_height="60dp"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/button_border"
+            android:text="Sign Up"
+            android:textAllCaps="false"
+            android:textColor="@color/dark"
+            android:textSize="16sp"
+            android:onClick="@{() -> homeFragment.buttonSignUp(buttonHomeSignUp)}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/buttonHomeLogin" />
+
+        <TextView
+            android:id="@+id/textViewHomeGuest"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:text="Continue as a guest?"
+            android:textColor="@color/primary"
+            android:textSize="16sp"
+            android:onClick="@{() -> homeFragment.textViewGuest(textViewHomeGuest)}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/buttonHomeSignUp" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
