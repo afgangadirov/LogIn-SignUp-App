@@ -34,6 +34,10 @@ public class OtpVerificationFragment extends Fragment {
 
         setupOTPInputs();
 
+        layout.textViewResendOtp.setOnClickListener(view -> {
+            Snackbar.make(view,"We just sent an OTP verification code to your email. Please check it.",Snackbar.LENGTH_SHORT).show();
+        });
+
         return layout.getRoot();
     }
 
@@ -46,16 +50,16 @@ public class OtpVerificationFragment extends Fragment {
 
     public void buttonVerify(View view){
         if (layout.inputCode1.getText().toString().isEmpty()){
-            Snackbar.make(view,"Please enter OTP verification code we just sent you",Snackbar.LENGTH_SHORT).show();
+            Snackbar.make(view,"Please enter the OTP verification code we just sent you",Snackbar.LENGTH_SHORT).show();
         }
         else if (layout.inputCode2.getText().toString().isEmpty()){
-            Snackbar.make(view,"Please enter OTP verification code we just sent you",Snackbar.LENGTH_SHORT).show();
+            Snackbar.make(view,"Please enter the OTP verification code we just sent you",Snackbar.LENGTH_SHORT).show();
         }
         else if (layout.inputCode3.getText().toString().isEmpty()){
-            Snackbar.make(view,"Please enter OTP verification code we just sent you",Snackbar.LENGTH_SHORT).show();
+            Snackbar.make(view,"Please enter the OTP verification code we just sent you",Snackbar.LENGTH_SHORT).show();
         }
         else if (layout.inputCode4.getText().toString().isEmpty()){
-            Snackbar.make(view,"Please enter OTP verification code we just sent you",Snackbar.LENGTH_SHORT).show();
+            Snackbar.make(view,"Please enter the OTP verification code we just sent you",Snackbar.LENGTH_SHORT).show();
         }else {
             Navigation.findNavController(view).navigate(R.id.action_otpVerificationFragment_to_newPasswordFragment);
         }

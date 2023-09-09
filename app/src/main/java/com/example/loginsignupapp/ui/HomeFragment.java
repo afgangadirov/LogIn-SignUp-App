@@ -27,7 +27,7 @@ public class HomeFragment extends Fragment {
         layout = DataBindingUtil.inflate(inflater, R.layout.fragment_home, container, false);
 
         layout.setHomeFragment(this);
-        layout.setHomeTitle("Road Dust");
+        layout.setHomeTitle("Samsung Pay");
 
         return layout.getRoot();
     }
